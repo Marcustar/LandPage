@@ -8,6 +8,20 @@
 <!--    <link rel="icon" href="icons/favicon.ico"/>-->
     <script src="https://kit.fontawesome.com/e7b5478d2d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/main.css"/>
+
+    <style>
+        .image-container {
+          position: relative;
+          display: inline-block;
+        }
+        .hidden-image {
+          display: none;
+          position: absolute;
+          top: -33vh;
+          left: -11vw;
+        }
+      </style>
+
 </head>
 <body>
 <div class="page-wrapper">
@@ -25,20 +39,40 @@
            href="https://www.douyin.com/user/MS4wLjABAAAAuHs6TSIm7DRYp8lyK6h37sv5GosU_0exUf8QSjISDGOLDCPROquLJIkqzzDRKyZq">
             <i class="icon fab fa-tiktok fa-2x"></i>
         </a>
-        <a target="_blank" href="http://staryu.cn/">
-            <i class="icon fas fa-blog fa-2x"></i>
+        <a target="_blank" href="http://v2022.staryu.cn/">
+            <i class="icon fas fa-play fa-2x"></i>
         </a>
         <a target="_blank" href="mailto:859783525@qq.com">
             <i class="icon fas fa-envelope fa-2x"></i>
+        </a>
+        <a target="_blank" href="#" id="a-Qrcode-weixin">
+            <div class="image-container">
+                <i class="icon fa fa-weixin fa-2x"></i>
+                <img src="./images/Qrcode-xinshuai.jpg" alt="weixin-Qrcode" class="hidden-image" alt="悬停图片">
+            </div>           
         </a>
         <a target="_blank" href="tel:+86 18616699123">
             <i class="icon fas fa-phone fa-2x"></i>
         </a>
     </div>
+    <!-- <img id="Qrcode-weixin" src="./images/Qrcode-xinshuai" /> -->
     <!--        <div style="position:relative;top: 32vh">-->
     <!--            <h5> some words </h5>-->
     <!--        </div>-->
 </div>
+
+<script>
+    const imageContainer = document.querySelector('.image-container');
+    const hiddenImage = document.querySelector('.hidden-image');
+  
+    imageContainer.addEventListener('mouseover', function() {
+      hiddenImage.style.display = 'block';
+    });
+  
+    imageContainer.addEventListener('mouseout', function() {
+      hiddenImage.style.display = 'none';
+    });
+  </script>
 
 <canvas id="sakura" class="bg_canvas">
 </canvas>
