@@ -15,10 +15,32 @@ body {
 
 .page-wrapper {
   /*display: grid;*/
-  place-items: center;
+  /* place-items: center;
   text-align: center;
   position: relative;
-  top: -6%;
+  top: -6%; */
+
+  /* display: grid; */
+  /* place-items: center; 垂直和水平居中 */
+  /* height: 100vh; 容器高度 */
+
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  height: 100vh; /* 容器高度 */
+}
+
+.content-wrapper {
+  margin: 0 auto;
+}
+
+.div-display-center {
+  display: flex;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
 }
 
 h1 {
