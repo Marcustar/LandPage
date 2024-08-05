@@ -28,11 +28,19 @@
         }
 
         @keyframes sport {
-            0%{transform: scale(1)}
+            0% {
+                transform: scale(1)
+            }
+
             /* 25%{transform: scale(1.1)} */
-            50%{transform: scale(1.2)}
+            50% {
+                transform: scale(1.2)
+            }
+
             /* 75%{transform: scale(1.1)} */
-            100%{transform: scale(1)}
+            100% {
+                transform: scale(1)
+            }
         }
     </style>
 
@@ -61,9 +69,10 @@
                 <a target="_blank" href="https://blog.staryu.cn/">
                     <i class="icon fas fa-blog fa-2x"></i>
                 </a>
-                <a target="_blank" href="https://link.storjshare.io/s/juxs55qptjro5dnsge63jngkemca/precious-love">
+                <a target="_blank" href="#" id='protectedLink'>
                     <i class="icon fas fa-heart fa-2x heart"></i>
                 </a>
+                
                 <a target="_blank" href="https://v2022.staryu.cn/">
                     <i class="icon fas fa-play fa-2x"></i>
                 </a>
@@ -84,6 +93,13 @@
                 <a target="_blank" href="tel:+86 18616699123">
                     <i class="icon fas fa-phone fa-1x"></i>
                 </a>
+            </div>
+            <div class="div-display-center" style="color: white" id="passDiv">
+                <form actoin="https://link.storjshare.io/s/juxs55qptjro5dnsge63jngkemca/precious-love" method="GET">
+                    <label for="passwordInput" style="display:none;" id="label01"> Sorry, 此链接需要输入密码访问。 </label>
+                    <input type="password" id="passwordInput" style="display:none;">
+                    <button id="submitPassword" style="display:none;">提交</button>
+                </form>
             </div>
         </div>
 
@@ -1218,6 +1234,54 @@ void main(void) {
             };
         })(window, 'equestAnimationFrame');
     </script>
+
+    <script>
+        // 获取链接和密码输入元素
+        var protectedLink = document.getElementById('protectedLink');
+        var passwordInput = document.getElementById('passwordInput');
+        var submitButton = document.getElementById('submitPassword');
+        var label01 = document.getElementById('label01');
+        // var passDiv = document.getElementById('passDiv');
+
+        // 设置密码，实际应用中可能从服务器获取或使用其他安全方式存储
+        var correctPassword = '1234';
+
+        // 为链接添加点击事件
+        protectedLink.addEventListener('click', function (event) {
+            // 阻止链接默认行为
+            event.preventDefault();
+
+            // 显示密码输入框和提交按钮
+            passwordInput.style.display = 'block';
+            submitButton.style.display = 'block';
+            label01.style.display= 'block';
+            // passDiv.style.display = 'block';
+
+            // 为提交按钮添加事件，验证密码
+            submitButton.addEventListener('click', function () {
+                var enteredPassword = passwordInput.value;
+
+                // 验证密码
+                if (enteredPassword === correctPassword) {
+                    // alert('密码正确，现在可以访问链接。');
+                    // 可以在这里写入跳转到目标页面的代码
+                    // window.location.href = 'https://link.storjshare.io/s/juxs55qptjro5dnsge63jngkemca/precious-love';
+                    window.open('https://link.storjshare.io/s/juxs55qptjro5dnsge63jngkemca/precious-love');
+                    // 或者
+                    // form.submit();
+                } else {
+                    alert('密码错误！');
+                }
+
+                // 隐藏密码输入框和提交按钮
+                passwordInput.style.display = 'none';
+                submitButton.style.display = 'none';
+                label01.style.display= 'none';
+            });
+        });
+    </script>
+
+
 </body>
 
 </html>
